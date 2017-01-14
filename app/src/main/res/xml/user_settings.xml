@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory android:title="Settings">
+    <EditTextPreference
+        android:title="Password"
+        android:summary="Set your password"
+        android:key="prefUserPassword"/>
+</PreferenceCategory>
+    <PreferenceCategory android:title="Security Settings">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefLockScreen"
+            android:summary="Lock the screen with password"
+            android:title="Screen Lock">
+
+        </CheckBoxPreference>
+       <ListPreference
+           android:key="prefUpdateFrequency"
+           android:title="Reminder for updation"
+           android:summary="Set Update Reminder Frequency"
+           android:entries="@array/updateFrequency"
+           android:entryValues="@array/updateFrequencyValues"
+           >
+
+       </ListPreference>
+        <Preference android:title="Web page" >
+                <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.example.com" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Background Music" android:key="pref_key_music">
+            <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="prefBackMusc"
+        android:summary="Background Music"
+        android:title="Music"></CheckBoxPreference>
+        </PreferenceCategory>
+    <!-- opens a subscreen of settings -->
+        <PreferenceScreen
+    android:key="button_voicemail_category_key"
+    android:title="Voice mail"
+    android:persistent="false">
+           
+         
+               
+           
+            <RingtonePreference android:key="button_voicemail_ringtone_key"
+    android:title="RingTone"
+    android:ringtoneType="notification" />
+        </PreferenceScreen>
+    </PreferenceScreen>
